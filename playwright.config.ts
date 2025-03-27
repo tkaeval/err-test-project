@@ -12,13 +12,18 @@ export default defineConfig({
 
   // Raporti tüüp (HTML loob kaustas playwright-report graafilise ülevaate)
   reporter: 'html',
+  
+  timeout: 60000, // kogu testi aeg
 
   // Üldseaded kõikidele projektidele
   use: {
     // Näiteks: baseURL: 'http://127.0.0.1:3000',
     // Trace salvestatakse ainult siis, kui test esimese korraga ebaõnnestub
     trace: 'on-first-retry',
+	actionTimeout: 10000, // iga tegevuse maksimaalne kestus
+    navigationTimeout: 30000 // navigeerimise maksimaalne aeg
   },
+
 
   // Erinevate browserite konfiguratsioon
   projects: [
